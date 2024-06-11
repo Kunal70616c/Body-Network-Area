@@ -4,3 +4,4 @@ joblib
 requests
 pandas
 numpy
+gunicorn

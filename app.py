@@ -17,19 +17,20 @@ def predict():
     url = f'https://api.thingspeak.com/channels/{channel_id}/feeds.json?api_key={api_key}&results=1'
     response = requests.get(url)
     data = response.json()
-
-    # Extract relevant data
+    
+   # Extract relevant data from the fetched feed
     feed = data['feeds'][0]
-    # Map ThingSpeak fields to model features
-    features = np.array([
-        [
-            feed['field1'],  # accelerometer_x
-            feed['field2'],  # accelerometer_y
-            feed['field3'],  # accelerometer_z
-            feed['field4'],  # body_temp
-            feed['field5']   # heart_rate
-        ]
-    ], dtype=float)
+
+# Map ThingSpeak fields to model features
+    heart_rate = int(feed['field5'])  # heart_rate
+    body_temp = float(feed['field4'])  # body_temp
+    accelerometer_x = int(feed['field1'])  # accelerometer_x
+    accelerometer_y = int(feed['field2'])  # accelerometer_y
+    accelerometer_z = int(feed['field3'])  # accelerometer_z
+
+# Prepare features for prediction
+    features = np.array([[heart_rate, body_temp, accelerometer_x, accelerometer_y, accelerometer_z]], dtype=float)
+
 
     # Make a prediction
     prediction = model.predict(features)

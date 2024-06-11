@@ -1,0 +1,41 @@
+import pandas as pd
+import numpy as np
+
+# Set seed for reproducibility
+np.random.seed(42)
+
+# Generate synthetic data
+num_samples = 1000
+heart_rate = np.random.randint(50, 150, size=num_samples)
+body_temp = np.random.uniform(35.0, 41.0, size=num_samples)
+accelerometer_x = np.random.uniform(0, 5, size=num_samples)
+accelerometer_y = np.random.uniform(0, 5, size=num_samples)
+accelerometer_z = np.random.uniform(0, 5, size=num_samples)
+
+# Define thresholds for "sick" condition
+heart_rate_threshold = 120
+body_temp_threshold = 38.0
+accelerometer_threshold = 3.0
+
+# Generate labels based on thresholds
+labels = (
+    (heart_rate > heart_rate_threshold) |
+    (body_temp > body_temp_threshold) |
+    (accelerometer_x > accelerometer_threshold) |
+    (accelerometer_y > accelerometer_threshold) |
+    (accelerometer_z > accelerometer_threshold)
+).astype(int)
+
+# Create a DataFrame
+df = pd.DataFrame({
+    'heart_rate': heart_rate,
+    'body_temp': body_temp,
+    'accelerometer_x': accelerometer_x,
+    'accelerometer_y': accelerometer_y,
+    'accelerometer_z': accelerometer_z,
+    'target': labels
+})
+
+# Save the synthetic dataset
+df.to_csv('synthetic_health_data.csv', index=False)
+print("Synthetic dataset saved as synthetic_health_data.csv")

@@ -7,15 +7,15 @@ np.random.seed(42)
 # Generate synthetic data
 num_samples = 1000
 heart_rate = np.random.randint(50, 150, size=num_samples)
-body_temp = np.random.uniform(35.0, 41.0, size=num_samples)
-accelerometer_x = np.random.uniform(0, 5, size=num_samples)
-accelerometer_y = np.random.uniform(0, 5, size=num_samples)
-accelerometer_z = np.random.uniform(0, 5, size=num_samples)
+body_temp = np.random.uniform(28.0, 41.0, size=num_samples)
+accelerometer_x = np.random.uniform(-14000, 21000, size=num_samples)
+accelerometer_y = np.random.uniform(-14000, 21000, size=num_samples)
+accelerometer_z = np.random.uniform(-14000, 21000, size=num_samples)
 
 # Define thresholds for "sick" condition
 heart_rate_threshold = 120
 body_temp_threshold = 38.0
-accelerometer_threshold = 3.0
+accelerometer_threshold = 18000.0
 
 # Generate labels based on thresholds
 labels = (

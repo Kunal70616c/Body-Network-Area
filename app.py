@@ -22,7 +22,7 @@ def predict():
     feed = data['feeds'][0]
 
 # Map ThingSpeak fields to model features
-    heart_rate = int(feed['field5'])  # heart_rate
+    heart_rate = float(feed['field5'])  # heart_rate
     body_temp = float(feed['field4'])  # body_temp
     accelerometer_x = int(feed['field1'])  # accelerometer_x
     accelerometer_y = int(feed['field2'])  # accelerometer_y

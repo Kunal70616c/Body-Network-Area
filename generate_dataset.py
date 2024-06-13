@@ -13,7 +13,7 @@ accelerometer_y = np.random.uniform(-16000, 21000, size=num_samples)
 accelerometer_z = np.random.uniform(-16000, 21000, size=num_samples)
 
 # Define thresholds for "sick" condition
-heart_rate_threshold = 120
+heart_rate_threshold = 116
 body_temp_threshold = 38.0
 accelerometer_threshold = 18000.0
 
@@ -38,4 +38,4 @@ df = pd.DataFrame({
 
 # Save the synthetic dataset
 df.to_csv('health_data.csv', index=False)
-print("Synthetic dataset saved as synthetic_health_data.csv")
+print("Synthetic dataset saved as health_data.csv")

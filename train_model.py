@@ -5,7 +5,7 @@ from sklearn.metrics import accuracy_score
 import joblib
 
 # Load the synthetic dataset
-df = pd.read_csv('synthetic_health_data.csv')
+df = pd.read_csv('health_data.csv')
 
 # Prepare the features (X) and the target (y)
 X = df.drop('target', axis=1)

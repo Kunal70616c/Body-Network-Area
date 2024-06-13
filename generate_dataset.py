@@ -6,11 +6,11 @@ np.random.seed(42)
 
 # Generate synthetic data
 num_samples = 1000
-heart_rate = np.random.randint(50, 150, size=num_samples)
-body_temp = np.random.uniform(28.0, 41.0, size=num_samples)
-accelerometer_x = np.random.uniform(-14000, 21000, size=num_samples)
-accelerometer_y = np.random.uniform(-14000, 21000, size=num_samples)
-accelerometer_z = np.random.uniform(-14000, 21000, size=num_samples)
+heart_rate = np.random.randint(100, 140, size=num_samples)
+body_temp = np.random.uniform(11.0, 41.0, size=num_samples)
+accelerometer_x = np.random.uniform(-16000, 21000, size=num_samples)
+accelerometer_y = np.random.uniform(-16000, 21000, size=num_samples)
+accelerometer_z = np.random.uniform(-16000, 21000, size=num_samples)
 
 # Define thresholds for "sick" condition
 heart_rate_threshold = 120
@@ -37,5 +37,5 @@ df = pd.DataFrame({
 })
 
 # Save the synthetic dataset
-df.to_csv('synthetic_health_data.csv', index=False)
+df.to_csv('health_data.csv', index=False)
 print("Synthetic dataset saved as synthetic_health_data.csv")

@@ -1,0 +1,23 @@
+Hardware Connections:
+
+MPU6050:
+
+VCC to 3.3V of ESP8266
+GND to GND of ESP8266
+SCL to D1 (GPIO 5) of ESP8266
+SDA to D2 (GPIO 4) of ESP8266
+
+
+DS18B20:
+
+VCC to 3.3V of ESP8266
+GND to GND of ESP8266
+Data to D3 (GPIO 0) of ESP8266 (with a 4.7k ohm pull-up resistor between Data and VCC)
+
+
+MAX30102
+
+VCC to 3.3V of ESP8266
+GND to GND of ESP8266
+SCL to D1 (GPIO 5) of ESP8266
+SDA to D2 (GPIO 4) of ESP8266
